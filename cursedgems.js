@@ -1,5 +1,8 @@
-// X LIMIT = 55
-// Y LIMIT = 19
+/**
+ * @file Cursed Gems
+ * @version 1.0
+ *
+ */
 
 // GAME DATA
 
@@ -89,11 +92,7 @@ function onConnect() {
 	// global_state = state.menu
 	// menu_state = state.menu
 	// drawMenu()
-	const data = loadData()
-	if (data !== "") {
-		parse = JSON.parse(data)
-		difficulty_unlocks = parse.unlocks
-	}
+	load_data()
 	goToMenu()
 }
 
@@ -202,8 +201,7 @@ function onInput(key) {
 					if (controls.select) {
 						if (menu_cursor === 1) {
 							difficulty_unlocks = 2
-							const data = JSON.stringify({unlocks: difficulty_unlocks})
-							saveData(data)
+							save_data()
 						}
 						goToMenu()
 					}
@@ -232,6 +230,30 @@ function onInput(key) {
 			}		
 			checkInput(key)
 			break
+		}
+	}
+}
+
+// CLASSIC BBS
+
+function save_data() {
+	if (typeof _bbs_save !== "undefined") {
+		_bbs_save_type("cursedgems", "unlocks", difficulty_unlocks)
+	} else {
+		const data = JSON.stringify({unlocks: difficulty_unlocks})
+		saveData(data)
+	}
+}
+
+function load_data() {
+	if (typeof _bbs_load !== "undefined") {
+		if (!_bbs_load()) return;
+		difficulty_unlocks = _bbs_load_type("cursedgems", 2, "unlocks")
+	} else {
+		const data = loadData()
+		if (data !== "") {
+			parse = JSON.parse(data)
+			difficulty_unlocks = parse.unlocks
 		}
 	}
 }
@@ -595,8 +617,7 @@ function checkInput(key) {
 						mode_unlocked = tbl[game_difficulty-1]
 					}
 					difficulty_unlocks += 1
-					const data = JSON.stringify({unlocks: difficulty_unlocks})
-					saveData(data)
+					save_data()
 				}
 			}
 			return
