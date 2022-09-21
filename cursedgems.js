@@ -252,7 +252,7 @@ function load_data() {
 	} else {
 		const data = loadData()
 		if (data !== "") {
-			parse = JSON.parse(data)
+			const parse = JSON.parse(data)
 			difficulty_unlocks = parse.unlocks
 		}
 	}
