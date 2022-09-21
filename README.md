@@ -1,4 +1,4 @@
-# Cursed-Gems
+# Cursed Gems
 A small puzzle game made for the Sawayama Powerlance. Available through your NETronics Connect! browser, give this server a dial up and try to stump the computer in a game of wits. Do you have what it takes to become a Cursed Gem master?
 
 (This file is made for the game Last Call BBS by Zachtronics)
