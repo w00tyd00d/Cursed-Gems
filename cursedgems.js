@@ -239,6 +239,7 @@ function onInput(key) {
 function save_data() {
 	if (typeof _bbs_save !== "undefined") {
 		_bbs_save_type("cursedgems", "unlocks", difficulty_unlocks)
+		_bbs_save()
 	} else {
 		const data = JSON.stringify({unlocks: difficulty_unlocks})
 		saveData(data)
