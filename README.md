@@ -3,7 +3,7 @@ A small puzzle game made for the Sawayama Powerlance. Available through your NET
 
 (This file is made for the game Last Call BBS by Zachtronics)
 
-Click ![here](https://t.ly/5dm8E) to play the online, emulated version of the game.
+Click [here](https://t.ly/5dm8E) to play the online, emulated version of the game.
 
 # Preview
 ![preview1](https://user-images.githubusercontent.com/66709693/191521061-25ebf8c5-c1c5-402a-a638-f54a98da0c0d.png)
